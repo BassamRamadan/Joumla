@@ -858,83 +858,53 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ooI-Qs-CyD">
-                                        <rect key="frame" x="20" y="71" width="374" height="103"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VLy-OX-IHu">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="103"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaZ-na-RqW" userLabel="حليب مجفف ومبخر">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  حليب مجفف ومبخر" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="Nio-5r-Si5"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFQ-OO-hf3">
-                                                        <rect key="frame" x="0.0" y="37" width="152" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  أجبان وزبدة" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="2aH-5u-Xj8"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njX-mc-ZVD">
-                                                        <rect key="frame" x="0.0" y="74" width="152" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  حلي مبرد" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="TXW-J5-nz1"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RNJ-dM-4P8">
-                                                <rect key="frame" x="231" y="0.0" width="143" height="103"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaN-4U-6g8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  حليب طويل الأجل" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="nqB-cR-CzB"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ex-Y8-ah5" userLabel="حليب مجفف ومبخر">
-                                                        <rect key="frame" x="0.0" y="37" width="143" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  قشطة وكريمة" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="Dur-WA-FED"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anE-LM-OA6">
-                                                        <rect key="frame" x="0.0" y="74" width="143" height="29"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                        <state key="normal" title="  لبنة" image="ic_chcek">
-                                                            <color key="titleColor" name="dark text"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="2J3-Cq-PVx"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-hu-vg2">
+                                        <rect key="frame" x="20" y="71" width="374" height="139"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WN5-DC-yhy">
+                                            <size key="itemSize" width="222" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Filter" id="8es-2j-MfY" customClass="FilterCell" customModule="Joumla" customModuleProvider="target">
+                                                <rect key="frame" x="76" y="0.0" width="222" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="222" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaZ-na-RqW" userLabel="حليب مجفف ومبخر">
+                                                            <rect key="frame" x="0.0" y="0.0" width="222" height="50"/>
+                                                            <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                            <state key="normal" title="  حليب مجفف ومبخر" image="ic_chcek">
+                                                                <color key="titleColor" name="dark text"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="FilterSelectionWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="Nio-5r-Si5"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="TaZ-na-RqW" secondAttribute="bottom" id="FVI-0m-FFf"/>
+                                                    <constraint firstItem="TaZ-na-RqW" firstAttribute="leading" secondItem="8es-2j-MfY" secondAttribute="leading" id="cCi-FL-uJ3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TaZ-na-RqW" secondAttribute="trailing" id="end-Dq-Aq7"/>
+                                                    <constraint firstItem="TaZ-na-RqW" firstAttribute="top" secondItem="8es-2j-MfY" secondAttribute="top" id="tai-sR-5I9"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="name" destination="TaZ-na-RqW" id="t5z-yx-lmH"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Sy0-Ng-BQG" id="Qpk-dz-nkG"/>
+                                            <outlet property="delegate" destination="Sy0-Ng-BQG" id="FhG-rp-yRZ"/>
+                                        </connections>
+                                    </collectionView>
                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqP-tV-yZU" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="204" width="394" height="60"/>
+                                        <rect key="frame" x="10" y="220" width="394" height="60"/>
                                         <color key="backgroundColor" name="green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="eF9-Pc-hD0"/>
@@ -952,17 +922,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="2Zw-hu-vg2" firstAttribute="top" secondItem="S9u-jo-nrJ" secondAttribute="bottom" constant="20" id="2Dz-PP-hqE"/>
                                     <constraint firstItem="CqP-tV-yZU" firstAttribute="leading" secondItem="FO1-SG-2ar" secondAttribute="leading" constant="10" id="7XZ-59-ejm"/>
-                                    <constraint firstItem="ooI-Qs-CyD" firstAttribute="bottom" secondItem="CqP-tV-yZU" secondAttribute="top" constant="-30" id="Dhe-1r-3xc"/>
                                     <constraint firstAttribute="height" constant="300" id="JWJ-cN-wCE"/>
                                     <constraint firstAttribute="trailing" secondItem="CqP-tV-yZU" secondAttribute="trailing" constant="10" id="MtX-PG-1Gp"/>
-                                    <constraint firstItem="ooI-Qs-CyD" firstAttribute="top" secondItem="S9u-jo-nrJ" secondAttribute="bottom" constant="20" id="TOV-bT-Qp2"/>
                                     <constraint firstItem="1Zv-Ia-fCd" firstAttribute="top" secondItem="FO1-SG-2ar" secondAttribute="top" constant="10" id="U12-rY-3MJ"/>
                                     <constraint firstItem="S9u-jo-nrJ" firstAttribute="top" secondItem="FO1-SG-2ar" secondAttribute="top" constant="20" id="V9h-fA-Rrb"/>
-                                    <constraint firstItem="ooI-Qs-CyD" firstAttribute="leading" secondItem="FO1-SG-2ar" secondAttribute="leading" constant="20" id="XPD-Jm-XGM"/>
+                                    <constraint firstItem="2Zw-hu-vg2" firstAttribute="leading" secondItem="FO1-SG-2ar" secondAttribute="leading" constant="20" id="YG1-MK-YeJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="CqP-tV-yZU" secondAttribute="bottom" constant="20" id="ZYL-fr-hvy"/>
                                     <constraint firstAttribute="trailing" secondItem="S9u-jo-nrJ" secondAttribute="trailing" constant="20" id="i6v-6F-mA7"/>
-                                    <constraint firstAttribute="trailing" secondItem="ooI-Qs-CyD" secondAttribute="trailing" constant="20" id="tYy-45-c5d"/>
                                     <constraint firstItem="1Zv-Ia-fCd" firstAttribute="leading" secondItem="FO1-SG-2ar" secondAttribute="leading" constant="10" id="wJe-5k-nsn"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Zw-hu-vg2" secondAttribute="trailing" constant="20" id="x8O-YR-hiL"/>
+                                    <constraint firstItem="CqP-tV-yZU" firstAttribute="top" secondItem="2Zw-hu-vg2" secondAttribute="bottom" constant="10" id="xJz-wi-Sb4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7B-86-8ZO">
@@ -1050,8 +1021,11 @@
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="BagroundImage" destination="x0G-t6-CUv" id="ThD-pt-d3Q"/>
+                        <outlet property="CategoryImage" destination="x0G-t6-CUv" id="Utf-g2-c0G"/>
+                        <outlet property="CategoryName" destination="Ro0-nJ-kT9" id="Zfg-ec-AX0"/>
                         <outlet property="CollectionHieght" destination="GUm-ez-lOa" id="rZN-gj-his"/>
                         <outlet property="CollectionView" destination="5Bb-WH-m4z" id="lHr-9m-pB2"/>
+                        <outlet property="FilterCollection" destination="2Zw-hu-vg2" id="Zax-Ko-bVu"/>
                         <outlet property="FilterView" destination="FO1-SG-2ar" id="XbB-YE-fo6"/>
                         <outlet property="OrderNumber" destination="Ux8-8Z-Abp" id="etm-Sh-k7x"/>
                         <outlet property="ProductDetailsStackView" destination="RDj-kM-esT" id="vUD-Vz-XAc"/>
@@ -1078,7 +1052,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmU-Bm-NLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4075.36231884058" y="8.7053571428571423"/>
+            <point key="canvasLocation" x="-4455" y="9"/>
         </scene>
         <!--المنتجات-->
         <scene sceneID="Ivi-rr-CF2">
@@ -1181,7 +1155,7 @@
                     <navigationItem key="navigationItem" title="المنتجات" id="siN-SQ-zwj"/>
                     <connections>
                         <outlet property="collectionView" destination="LfO-JG-GyH" id="FBK-b8-pBo"/>
-                        <segue destination="FVU-a2-xaP" kind="show" identifier="ProductList" id="wwI-Ap-VAJ"/>
+                        <segue destination="FVU-a2-xaP" kind="show" identifier="ProductList" id="PIa-zP-T6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbA-RG-mQc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,11 +16,10 @@ class Categories: common {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
         getOrdersData(url: "https://services-apps.net/jaddastore/public/api/categories")
     }
     
@@ -86,13 +85,7 @@ class Categories: common {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ProductList" {
-            if let destination = segue.destination as? Products{
-               
-            }
-        }
-    }
+    
     
 }
 extension Categories : UICollectionViewDelegate , UICollectionViewDataSource{
@@ -111,7 +104,16 @@ extension Categories : UICollectionViewDelegate , UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        performSegue(withIdentifier: "ProductList", sender: self)
+        performSegue(withIdentifier: "ProductList", sender: self.CategoriesArr[indexPath.row].id)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductList" {
+            if let destination = segue.destination as? UINavigationController{
+                if let dest = destination.viewControllers[0] as? Products{
+                    dest.CategoryId = sender as? Int
+                }
+            }
+        }
     }
 }
 extension Categories: PinterestLayoutDelegate {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Products: UIViewController {
+class Products: common {
 
     @IBOutlet var CollectionView : UICollectionView!
     @IBOutlet var CollectionHieght : NSLayoutConstraint!
@@ -16,12 +16,40 @@ class Products: UIViewController {
     @IBOutlet var BagroundImage : UIImageView!
     @IBOutlet var topView : UIView!
     @IBOutlet var FilterView : UIView!
+    @IBOutlet var OrderNumber : UILabel!
+    @IBOutlet var ProductDetailsStackView : UIStackView!
+    var OrderNumberHasAdded = 1
+    var PageNumber = 1
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UpdateConstraints()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        hidesBottomBarWhenPushed = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PageNumber = 1
+        hidesPages()
+        UpdateConstraints()
+    }
+    
+    fileprivate func UpdateConstraints(){
+        self.CollectionView.layoutIfNeeded()
+        self.CollectionHieght.constant = self.CollectionView.contentSize.height
+    }
+    
     @IBAction func FilterOpen(sender : UIButton){
         FilterView.isHidden = false
     }
+    
     @IBAction func FilterClose(sender : UIButton){
         FilterView.isHidden = true
     }
+    
+    
     @IBAction func FilterSelection(sender : UIButton){
         if sender.imageView?.image == #imageLiteral(resourceName: "ic_chcek") {
             sender.setImage(#imageLiteral(resourceName: "ic_chcek_active"), for: .normal)
@@ -29,28 +57,48 @@ class Products: UIViewController {
             sender.setImage(#imageLiteral(resourceName: "ic_chcek"), for: .normal)
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        UpdateConstraints()
-        // Do any additional setup after loading the view.
+    fileprivate func hidesPages(){
+        if PageNumber == 1{
+            CollectionView.isHidden = false
+            ProductDetailsStackView.isHidden = true
+        }else{
+            CollectionView.isHidden = true
+            ProductDetailsStackView.isHidden = false
+        }
+    }
+    
+    @IBAction func Plus(sender : UIButton){
+        OrderNumberHasAdded += 1
+        OrderNumber.text = "\(OrderNumberHasAdded)"
+    }
+    @IBAction func Minus(sender : UIButton){
+        OrderNumberHasAdded -= 1
+        OrderNumberHasAdded = max(OrderNumberHasAdded, 1)
+        OrderNumber.text = "\(OrderNumberHasAdded)"
+    }
+    
+    
+    @IBAction func AddOrder(sender : UIButton){
+        let token = CashedData.getUserApiKey() ?? ""
+        if token == ""{
+            showCustomDialog()
+        }else{
+            if sender.imageView?.image == #imageLiteral(resourceName: "ic_cart") {
+                sender.setImage(#imageLiteral(resourceName: "ic_cart_white"), for: .normal)
+                sender.backgroundColor = UIColor(named: "green")
+                sender.setTitleColor(.white, for: .normal)
+            }
+        }
     }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        topView.transform = CGAffineTransform(translationX: 0, y: ((ScrollView.contentOffset.y / 3)) * -1)
+        BagroundImage.transform = CGAffineTransform(translationX: 0, y: ((ScrollView.contentOffset.y/2)+22) * -1)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UpdateConstraints()
-    }
-    fileprivate func UpdateConstraints(){
-        self.CollectionView.layoutIfNeeded()
-        self.CollectionHieght.constant = self.CollectionView.contentSize.height
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "productDetails" {
-           if let destination = segue.destination as? ProductsDetails {
-                
-            }
+    @IBAction func back(sender : UIButton) {
+        if PageNumber == 2{
+            PageNumber = 1
+            hidesPages()
+        }else{
+            self.navigationController?.dismiss(animated: true)
         }
     }
 }
@@ -67,6 +115,7 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        performSegue(withIdentifier: "productDetails", sender: self)
+        PageNumber = 2
+        hidesPages()
     }
 }

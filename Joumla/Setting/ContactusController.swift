@@ -24,7 +24,7 @@ class ContactusController: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackButton()
+        setupBackButtonWithDismiss()
         setupShadowViewtop()
         Modules()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ok(reg:)))
@@ -124,17 +124,6 @@ class ContactusController: common {
         hidesBottomBarWhenPushed = true
     }
     
-   
-    func setupBackButton() {
-           self.navigationItem.hidesBackButton = true
-           let backBtn: UIButton = common.drowbackButton()
-           let backButton = UIBarButtonItem(customView: backBtn)
-           self.navigationItem.setRightBarButton(backButton, animated: true)
-           backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
-    }
-    @objc func back() {
-           self.navigationController?.dismiss(animated: true)
-    }
     fileprivate func setupShadowViewtop(){
         common.setNavigationShadow(navigationController: self.navigationController)
     }

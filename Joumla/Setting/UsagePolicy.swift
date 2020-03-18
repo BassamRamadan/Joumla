@@ -14,11 +14,12 @@ class UsagePolicy: common {
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackButton()
+       
+        setupBackButtonWithDismiss()
         common.setNavigationShadow(navigationController: self.navigationController)
         self.tabBarController?.tabBar.isHidden = false
         self.getAboutData()
-        // Do any additional setup after loading the view.
+       
     }
     
     
@@ -57,17 +58,6 @@ class UsagePolicy: common {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         hidesBottomBarWhenPushed = true
-    }
-    func setupBackButton() {
-        self.navigationItem.hidesBackButton = true
-        let backBtn: UIButton = common.drowbackButton()
-        let backButton = UIBarButtonItem(customView: backBtn)
-        self.navigationItem.setRightBarButton(backButton, animated: true)
-        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
-    }
-    @objc func back() {
-        self.navigationController?.dismiss(animated: true)
-      //  self.navigationController?.popViewController(animated: true)
     }
 
 }

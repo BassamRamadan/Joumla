@@ -27,7 +27,7 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBackButton()
+        setupBackButtonWithDismiss()
         self.myPicController.delegate = self
         setupGesture()
         roundCorners(cornerRadius: 10)
@@ -201,17 +201,6 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
     }
     @objc func tb(_ tab : UITapGestureRecognizer){
         view.endEditing(true)
-    }
-
-    func setupBackButton() {
-        self.navigationItem.hidesBackButton = true
-        let backBtn: UIButton = common.drowbackButton()
-        let backButton = UIBarButtonItem(customView: backBtn)
-        self.navigationItem.setRightBarButton(backButton, animated: true)
-        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
-    }
-    @objc func back() {
-        self.navigationController?.dismiss(animated: true)
     }
     
     @objc func ok(reg : UITapGestureRecognizer){

@@ -133,5 +133,24 @@ class common : UIViewController , NVActivityIndicatorViewable{
         present(popup, animated: animated, completion: nil)
     }
     
-    
+    func setupBackButtonWithPOP() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.POP), for: UIControl.Event.touchUpInside)
+    }
+    func setupBackButtonWithDismiss() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.Dismiss), for: UIControl.Event.touchUpInside)
+    }
+    @objc func Dismiss() {
+        self.navigationController?.dismiss(animated: true)
+    }
+    @objc func POP() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

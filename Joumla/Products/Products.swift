@@ -10,9 +10,11 @@ import UIKit
 import SDWebImage
 class Products: common {
 
+    var ProductArr = [productsInfo]()
     var FilterIds = [Int]()
     var FilterArr = [FiltersData]()
     @IBOutlet var CollectionView : UICollectionView!
+    @IBOutlet var PricesCollection : UICollectionView!
     @IBOutlet var FilterCollection : UICollectionView!
     @IBOutlet var CollectionHieght : NSLayoutConstraint!
     @IBOutlet var ScrollView : UIScrollView!
@@ -25,9 +27,16 @@ class Products: common {
     @IBOutlet var CategoryName : UILabel!
     @IBOutlet var CategoryImage : UIImageView!
     
+    @IBOutlet var ProductTitle : UILabel!
+    @IBOutlet var ProductImage : UIImageView!
+    @IBOutlet var ProductInpackage : UILabel!
+    @IBOutlet var ProductPackagePrice : UILabel!
+   
+    
     var OrderNumberHasAdded = 1
     var PageNumber = 1
     var CategoryId : Int?
+    var ProductId : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         UpdateConstraints()
@@ -72,6 +81,9 @@ class Products: common {
             }
         }
     }
+    @IBAction func ShowResults(sender : UIButton){
+         self.getProducts(url: "https://services-apps.net/jaddastore/public/api/products")
+    }
     fileprivate func hidesPages(){
         if PageNumber == 1{
             CollectionView.isHidden = false
@@ -79,6 +91,11 @@ class Products: common {
         }else{
             CollectionView.isHidden = true
             ProductDetailsStackView.isHidden = false
+            self.ProductImage.sd_setImage(with: URL(string: self.ProductArr[ProductId ?? 0].imagePath ?? ""))
+            self.ProductTitle.text = self.ProductArr[ProductId ?? 0].name ?? ""
+            self.ProductInpackage.text = self.ProductArr[ProductId ?? 0].InPackage ?? ""
+            self.ProductPackagePrice.text = self.ProductArr[ProductId ?? 0].packagePrice ?? ""
+            PricesCollection.reloadData()
         }
     }
     
@@ -211,6 +228,11 @@ class Products: common {
                     if success{
                         self.CategoryName.text = dataRecived.data?.main_category?.name ?? ""
                         self.CategoryImage.sd_setImage(with: URL(string: dataRecived.data?.main_category?.imagePath ?? ""))
+                        self.ProductArr.removeAll()
+                        self.ProductArr.append(contentsOf: dataRecived.data!.products)
+                        self.CollectionView.reloadData()
+                        self.UpdateConstraints()
+                        self.FilterView.isHidden = true
                         self.stopAnimating()
                     }
                     else  {
@@ -262,16 +284,20 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == FilterCollection{
              return self.FilterArr.count
+        }else if collectionView == PricesCollection && self.ProductId != nil{
+            return self.ProductArr[self.ProductId ?? 0].prices.count
         }else{
-              return 6
+            return self.ProductArr.count
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
         if collectionView == FilterCollection{
             return CGSize(width: (collectionView.frame.width-10)/2, height: 40)
-        }else{
+        }else if collectionView == self.CollectionView{
              return CGSize(width: (collectionView.frame.width-20)/2, height: 300)
+        }else{
+            return CGSize(width: 200, height: collectionView.frame.height)
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -279,10 +305,24 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Filter", for: indexPath) as! FilterCell
             cell.name.setTitle("  \(self.FilterArr[indexPath.row].name ?? "")", for: .normal)
             cell.name.setImage(#imageLiteral(resourceName: "ic_chcek_active"), for: .normal)
-            cell.name.tag = indexPath.row
+            cell.name.tag = self.FilterArr[indexPath.row].id
+            return cell
+        }else if collectionView == PricesCollection{
+             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Prices", for: indexPath) as!
+            PricesCell
+            cell.title.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].title ?? ""
+            cell.price.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].price ?? ""
+            cell.count.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].count ?? ""
             return cell
         }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Products", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Products", for: indexPath) as!
+            ProductCell
+            cell.title.text = self.ProductArr[indexPath.row].name ?? ""
+            cell.price.text = self.ProductArr[indexPath.row].price ?? ""
+            cell.netPrice.text = self.ProductArr[indexPath.row].netPrice ?? ""
+            cell.InPackage.text = self.ProductArr[indexPath.row].InPackage ?? ""
+            cell.packagePrice.text = self.ProductArr[indexPath.row].packagePrice
+            cell.ProductImage.sd_setImage(with: URL(string: self.ProductArr[indexPath.row].imagePath ?? ""))
             return cell
         }
     }
@@ -291,6 +331,7 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
         if collectionView == FilterCollection{
             
         }else{
+            ProductId = indexPath.row
             PageNumber = 2
             hidesPages()
         }

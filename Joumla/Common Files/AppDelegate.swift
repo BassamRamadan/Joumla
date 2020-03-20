@@ -11,6 +11,8 @@ import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var CommonCartItems : CartDetails?
+    static var HasAddNewOrder: Bool = true
     var window: UIWindow?
     static let stringWithLink = "Please download B.Station app here from Tamkeen Site: http://support@tamkeen-apps.com"
 

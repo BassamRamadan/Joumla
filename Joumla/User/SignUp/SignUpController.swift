@@ -41,6 +41,7 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
         super.viewWillAppear(animated)
         
         if self.navigationItem.title == "تعديل بياناتي"{
+            userImage.sd_setImage(with: URL(string: CashedData.getUserImage() ?? ""))
             name.text = CashedData.getUserName() ?? ""
             phone.text = CashedData.getUserPhone() ?? ""
             email.text = CashedData.getUserEmail() ?? ""
@@ -110,7 +111,7 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
                 "_method" : "PUT"
             ]
         }
-        AlamofireRequests.PostMethod(methodType: self.methodType, url: url, info: info, headers: headers){
+        AlamofireRequests.UserSignUp(url: url, info: info, images: [], CompanyImage: userImage.image, coverImage: nil, idImage: nil, licenseImage: nil, headers: headers){
             (error, success , jsonData) in
             do {
                 self.stopAnimating()
@@ -127,7 +128,7 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
                         CashedData.saveUserName(name: user?.name ?? "")
                         CashedData.saveUserEmail(name: user?.email ?? "")
                         CashedData.saveUserPassword(name: self.pass.text ?? "")
-                        
+                        CashedData.saveUserImage(name: user?.imagePath ?? "")
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabUserController
                         linkingVC.index = 1
@@ -157,14 +158,12 @@ class SignUpController: common, UIImagePickerControllerDelegate ,
         self.present(myPicController , animated: true, completion: nil)
     }
     
-    @objc  func imagePickerController(_ picker: UIImagePickerController,
+    @objc func imagePickerController(_ picker: UIImagePickerController,
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let returnImage =  info[.originalImage] as? UIImage   {
             image = returnImage
             userImage.image = returnImage
-            
         }
-        
         picker.dismiss(animated: true, completion: nil);
     }
     

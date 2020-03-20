@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QtA-lT-VMg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gv0-XQ-8xa">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,239 +22,632 @@
         </array>
     </customFonts>
     <scenes>
-        <!--سلة المشتريات-->
-        <scene sceneID="ZeT-JC-MUc">
+        <!--معلومات الدفع-->
+        <scene sceneID="2TB-C6-8jV">
             <objects>
-                <viewController title="سلة المشتريات" id="QtA-lT-VMg" customClass="Trashing" customModule="Joumla" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v6N-z6-a9p">
+                <viewController title="معلومات الدفع" id="Zi4-eL-tju" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kic-V1-n7o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zXe-K1-bVu">
-                                <rect key="frame" x="0.0" y="50" width="414" height="637.5"/>
-                                <color key="backgroundColor" name="dark light"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Trashing" rowHeight="237" id="UfV-G1-vcy">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="237"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UfV-G1-vcy" id="RL2-ul-ABC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs5-1n-lpi" customClass="ViewShadow" customModule="Joumla" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="10" width="394" height="217"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cTz-bs-sT4">
-                                                            <rect key="frame" x="15" y="20" width="364" height="167"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-HG-IZJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="100"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhC-Tk-RTU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dni-qd-LOf">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="504.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v3J-vS-tsC">
+                                                <rect key="frame" x="10" y="20" width="394" height="454.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIw-lu-D4t">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="110"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إجمالى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-U0-GCy">
+                                                                <rect key="frame" x="341" y="20" width="33" height="15.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3332" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-C0-iGG">
+                                                                <rect key="frame" x="338" y="45.5" width="36" height="19"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waV-Wa-oIm">
+                                                                <rect key="frame" x="311" y="52.5" width="22" height="14"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="SAR">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر شامل قيمة الشحن" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipY-dk-kHr">
+                                                                <rect key="frame" x="10" y="58" width="113.5" height="15.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="EQ7-C0-iGG" firstAttribute="top" secondItem="XLK-U0-GCy" secondAttribute="bottom" constant="10" id="9CW-E6-4BA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EQ7-C0-iGG" secondAttribute="trailing" constant="20" id="AMr-bG-dHJ"/>
+                                                            <constraint firstItem="ipY-dk-kHr" firstAttribute="firstBaseline" secondItem="EQ7-C0-iGG" secondAttribute="firstBaseline" constant="10" id="Ckp-eE-SN9"/>
+                                                            <constraint firstItem="EQ7-C0-iGG" firstAttribute="leading" secondItem="waV-Wa-oIm" secondAttribute="trailing" constant="5" id="Dfs-UY-5Q1"/>
+                                                            <constraint firstItem="ipY-dk-kHr" firstAttribute="leading" secondItem="CIw-lu-D4t" secondAttribute="leading" constant="10" id="Dhi-Yp-EtL"/>
+                                                            <constraint firstItem="XLK-U0-GCy" firstAttribute="top" secondItem="CIw-lu-D4t" secondAttribute="top" constant="20" id="ciw-4f-yw6"/>
+                                                            <constraint firstAttribute="height" constant="110" id="kfZ-4G-Uk4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XLK-U0-GCy" secondAttribute="trailing" constant="20" id="o7Y-Kg-K6f"/>
+                                                            <constraint firstItem="waV-Wa-oIm" firstAttribute="firstBaseline" secondItem="EQ7-C0-iGG" secondAttribute="firstBaseline" constant="2" id="yfu-eu-Ni4"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="toS-be-UT6">
+                                                        <rect key="frame" x="0.0" y="120" width="394" height="334.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يمكنك إختيار  إحدي وسائل وطرق الدفع التالية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-pA-8wM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                <color key="textColor" name="light blue"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Duv-sX-CGQ">
+                                                                <rect key="frame" x="0.0" y="57.5" width="394" height="177"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-we-VBS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5i8-1L-S67">
+                                                                                <rect key="frame" x="0.0" y="9" width="16" height="22"/>
+                                                                                <state key="normal" image="ic_chcek"/>
+                                                                            </button>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-kE-hCz">
+                                                                                <rect key="frame" x="16" y="0.0" width="378" height="40"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع النقدى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BM-Vj-ur2">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="17.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع النقدى عند إستلام الشحنة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4J-FW-bHv">
+                                                                                        <rect key="frame" x="0.0" y="22.5" width="378" height="17.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W5W-jB-COd">
+                                                                        <rect key="frame" x="0.0" y="70" width="394" height="38.5"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk1-gH-eIX">
+                                                                                <rect key="frame" x="0.0" y="8.5" width="16" height="22"/>
+                                                                                <state key="normal" image="ic_chcek"/>
+                                                                            </button>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="59g-10-Uv8">
+                                                                                <rect key="frame" x="16" y="0.0" width="378" height="38.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطاقات الائتمان" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpa-kS-iaK">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="17.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment_visa" translatesAutoresizingMaskIntoConstraints="NO" id="wis-gm-wOe">
+                                                                                        <rect key="frame" x="0.0" y="22.5" width="378" height="16"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HlZ-Wb-xOD">
+                                                                        <rect key="frame" x="0.0" y="138.5" width="394" height="38.5"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-Ix-szh">
+                                                                                <rect key="frame" x="0.0" y="8.5" width="16" height="22"/>
+                                                                                <state key="normal" image="ic_chcek"/>
+                                                                            </button>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZMP-21-ewr">
+                                                                                <rect key="frame" x="16" y="0.0" width="378" height="38.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خدمات دفع الأموال" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZm-a3-kks">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="17.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment_mada" translatesAutoresizingMaskIntoConstraints="NO" id="BTp-PY-Uyi">
+                                                                                        <rect key="frame" x="0.0" y="22.5" width="378" height="16"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-am-ZpT" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="274.5" width="394" height="60"/>
+                                                                <color key="backgroundColor" name="green"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="aKr-v0-Mmf"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="17"/>
+                                                                <state key="normal" title="إتمام الشراء">
+                                                                    <color key="titleColor" name="white"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="v3J-vS-tsC" secondAttribute="height" constant="50" id="UfL-fA-Ytg"/>
+                                            <constraint firstItem="v3J-vS-tsC" firstAttribute="leading" secondItem="Dni-qd-LOf" secondAttribute="leading" constant="10" id="Z5k-NO-WYw"/>
+                                            <constraint firstAttribute="trailing" secondItem="v3J-vS-tsC" secondAttribute="trailing" constant="10" id="um4-sM-5tP"/>
+                                            <constraint firstItem="v3J-vS-tsC" firstAttribute="top" secondItem="Dni-qd-LOf" secondAttribute="top" constant="20" id="uqV-qy-WYq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Dni-qd-LOf" firstAttribute="top" secondItem="uhC-Tk-RTU" secondAttribute="top" id="D1G-EN-SKK"/>
+                                    <constraint firstItem="Dni-qd-LOf" firstAttribute="width" secondItem="uhC-Tk-RTU" secondAttribute="width" id="R85-5V-rHn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dni-qd-LOf" secondAttribute="trailing" id="giD-Kk-1Jl"/>
+                                    <constraint firstItem="Dni-qd-LOf" firstAttribute="leading" secondItem="uhC-Tk-RTU" secondAttribute="leading" id="mnz-43-KBI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dni-qd-LOf" secondAttribute="bottom" id="z1j-BR-9gd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uhC-Tk-RTU" firstAttribute="leading" secondItem="wca-zX-b0L" secondAttribute="leading" id="2y6-Q7-cYk"/>
+                            <constraint firstItem="uhC-Tk-RTU" firstAttribute="top" secondItem="wca-zX-b0L" secondAttribute="top" id="6B4-Y0-MZ3"/>
+                            <constraint firstItem="wca-zX-b0L" firstAttribute="bottom" secondItem="uhC-Tk-RTU" secondAttribute="bottom" id="LG5-Ee-8p3"/>
+                            <constraint firstItem="wca-zX-b0L" firstAttribute="trailing" secondItem="uhC-Tk-RTU" secondAttribute="trailing" id="abv-pW-koh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wca-zX-b0L"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qns-as-2n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-85719" y="1244"/>
+        </scene>
+        <!--سلة المشتريات-->
+        <scene sceneID="OYk-py-F7r">
+            <objects>
+                <viewController title="سلة المشتريات" id="zrJ-aB-uPC" customClass="CartVC" customModule="Joumla" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H1p-TG-wcW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIL-iv-iKe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="878"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wtd-z7-if4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="878"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TbK-cU-S5L">
+                                                <rect key="frame" x="10" y="10" width="394" height="828"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pkB-gz-wJf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="676.5"/>
+                                                        <color key="backgroundColor" name="dark light"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Trashing" rowHeight="237" id="RvW-M1-UtY" customClass="OrdersCell" customModule="Joumla" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="394" height="237"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RvW-M1-UtY" id="AdG-VU-fNO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="237"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5-foodstuffs" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-Ez-8tg" customClass="imageShadow" customModule="Joumla" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTt-wk-QeT" customClass="ViewShadow" customModule="Joumla" customModuleProvider="target">
+                                                                            <rect key="frame" x="10" y="10" width="374" height="220"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-oW-WQX">
+                                                                                    <rect key="frame" x="15" y="20" width="344" height="170"/>
+                                                                                    <subviews>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lRq-Jb-Cig">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="344" height="100"/>
+                                                                                            <subviews>
+                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5-foodstuffs" translatesAutoresizingMaskIntoConstraints="NO" id="AWR-cv-GEm" customClass="imageShadow" customModule="Joumla" customModuleProvider="target">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstAttribute="width" constant="100" id="EJI-8t-dF9"/>
+                                                                                                        <constraint firstAttribute="height" constant="100" id="zEl-Io-sEe"/>
+                                                                                                    </constraints>
+                                                                                                    <userDefinedRuntimeAttributes>
+                                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                            <integer key="value" value="10"/>
+                                                                                                        </userDefinedRuntimeAttribute>
+                                                                                                    </userDefinedRuntimeAttributes>
+                                                                                                </imageView>
+                                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TSo-aS-LrF">
+                                                                                                    <rect key="frame" x="100" y="2" width="244" height="96.5"/>
+                                                                                                    <subviews>
+                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نص كرتونة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oO-Vk-EDc">
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="29"/>
+                                                                                                            <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                                            <color key="textColor" name="red"/>
+                                                                                                            <nil key="highlightedColor"/>
+                                                                                                        </label>
+                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حليب المراعي" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKi-WJ-fav">
+                                                                                                            <rect key="frame" x="0.0" y="34" width="244" height="29"/>
+                                                                                                            <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                                            <nil key="textColor"/>
+                                                                                                            <nil key="highlightedColor"/>
+                                                                                                        </label>
+                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kn0-29-UWt">
+                                                                                                            <rect key="frame" x="0.0" y="68" width="244" height="28.5"/>
+                                                                                                            <subviews>
+                                                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-hb-n3Y">
+                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="28.5"/>
+                                                                                                                    <subviews>
+                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1B-qe-hay">
+                                                                                                                            <rect key="frame" x="0.0" y="0.0" width="141.5" height="28.5"/>
+                                                                                                                            <attributedString key="attributedText">
+                                                                                                                                <fragment content="عبوة">
+                                                                                                                                    <attributes>
+                                                                                                                                        <font key="NSFont" size="14" name="CourierNewPSMT"/>
+                                                                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                                                    </attributes>
+                                                                                                                                </fragment>
+                                                                                                                            </attributedString>
+                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                        </label>
+                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St2-e7-jgh">
+                                                                                                                            <rect key="frame" x="146.5" y="0.0" width="17" height="28.5"/>
+                                                                                                                            <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                                                            <nil key="textColor"/>
+                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                        </label>
+                                                                                                                    </subviews>
+                                                                                                                </stackView>
+                                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gK0-CY-yVG">
+                                                                                                                    <rect key="frame" x="173.5" y="4" width="8" height="20.5"/>
+                                                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                                                                    <nil key="textColor"/>
+                                                                                                                    <nil key="highlightedColor"/>
+                                                                                                                </label>
+                                                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-Q3-fja">
+                                                                                                                    <rect key="frame" x="191.5" y="7" width="52.5" height="14"/>
+                                                                                                                    <subviews>
+                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-He-N0M">
+                                                                                                                            <rect key="frame" x="0.0" y="0.0" width="22" height="14"/>
+                                                                                                                            <attributedString key="attributedText">
+                                                                                                                                <fragment content="SAR">
+                                                                                                                                    <attributes>
+                                                                                                                                        <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                                                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                                                    </attributes>
+                                                                                                                                </fragment>
+                                                                                                                            </attributedString>
+                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                        </label>
+                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="223" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFD-aF-F9r">
+                                                                                                                            <rect key="frame" x="27" y="0.0" width="25.5" height="14"/>
+                                                                                                                            <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                                                            <color key="textColor" name="red"/>
+                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                        </label>
+                                                                                                                    </subviews>
+                                                                                                                </stackView>
+                                                                                                            </subviews>
+                                                                                                        </stackView>
+                                                                                                    </subviews>
+                                                                                                </stackView>
+                                                                                            </subviews>
+                                                                                        </stackView>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="opL-6M-QM1">
+                                                                                            <rect key="frame" x="0.0" y="120" width="344" height="50"/>
+                                                                                            <subviews>
+                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-0o-gSN">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="1"/>
+                                                                                                    <subviews>
+                                                                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFQ-lu-Sdo">
+                                                                                                            <rect key="frame" x="10" y="0.0" width="334" height="1"/>
+                                                                                                            <color key="backgroundColor" name="separator"/>
+                                                                                                        </view>
+                                                                                                    </subviews>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstItem="aFQ-lu-Sdo" firstAttribute="top" secondItem="Y7k-0o-gSN" secondAttribute="top" id="6cm-9Z-pvx"/>
+                                                                                                        <constraint firstItem="aFQ-lu-Sdo" firstAttribute="leading" secondItem="Y7k-0o-gSN" secondAttribute="leading" constant="10" id="PcC-Xw-IJB"/>
+                                                                                                        <constraint firstAttribute="trailing" secondItem="aFQ-lu-Sdo" secondAttribute="trailing" id="Wdj-P3-lmI"/>
+                                                                                                        <constraint firstAttribute="height" constant="1" id="gIf-bM-OUA"/>
+                                                                                                        <constraint firstAttribute="bottom" secondItem="aFQ-lu-Sdo" secondAttribute="bottom" id="l60-4x-f5v"/>
+                                                                                                    </constraints>
+                                                                                                </view>
+                                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3lV-OX-Mfe">
+                                                                                                    <rect key="frame" x="0.0" y="16" width="344" height="34"/>
+                                                                                                    <subviews>
+                                                                                                        <button contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-dA-NA6" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="34"/>
+                                                                                                            <color key="backgroundColor" name="green"/>
+                                                                                                            <constraints>
+                                                                                                                <constraint firstAttribute="width" constant="35" id="bGR-wN-nXS"/>
+                                                                                                                <constraint firstAttribute="height" constant="35" id="g5O-uc-yE7"/>
+                                                                                                            </constraints>
+                                                                                                            <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="12"/>
+                                                                                                            <state key="normal" title="حفظ      "/>
+                                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                                    <real key="value" value="17.5"/>
+                                                                                                                </userDefinedRuntimeAttribute>
+                                                                                                            </userDefinedRuntimeAttributes>
+                                                                                                            <connections>
+                                                                                                                <action selector="SaveItem:" destination="zrJ-aB-uPC" eventType="touchUpInside" id="NWJ-PT-wPr"/>
+                                                                                                            </connections>
+                                                                                                        </button>
+                                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oY-nu-GRn">
+                                                                                                            <rect key="frame" x="45" y="0.0" width="33.5" height="34"/>
+                                                                                                            <constraints>
+                                                                                                                <constraint firstAttribute="width" secondItem="8oY-nu-GRn" secondAttribute="height" multiplier="1:1" id="fat-IF-ens"/>
+                                                                                                            </constraints>
+                                                                                                            <state key="normal" image="ic_delete"/>
+                                                                                                            <connections>
+                                                                                                                <action selector="DeletItem:" destination="zrJ-aB-uPC" eventType="touchUpInside" id="wna-MU-6bN"/>
+                                                                                                            </connections>
+                                                                                                        </button>
+                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wpI-vZ-0Pf">
+                                                                                                            <rect key="frame" x="88.5" y="0.0" width="255.5" height="34"/>
+                                                                                                            <subviews>
+                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-rW-Cft">
+                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
+                                                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                                </view>
+                                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-af-5t6">
+                                                                                                                    <rect key="frame" x="157" y="0.0" width="34" height="34"/>
+                                                                                                                    <constraints>
+                                                                                                                        <constraint firstAttribute="width" secondItem="SGt-af-5t6" secondAttribute="height" multiplier="1:1" id="oyC-Gf-Ntd"/>
+                                                                                                                    </constraints>
+                                                                                                                    <state key="normal" image="ic_btn_mins"/>
+                                                                                                                    <connections>
+                                                                                                                        <action selector="MinusWithSender:" destination="zrJ-aB-uPC" eventType="touchUpInside" id="6nC-2j-uL1"/>
+                                                                                                                    </connections>
+                                                                                                                </button>
+                                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8x-fM-RYY">
+                                                                                                                    <rect key="frame" x="201" y="0.0" width="11" height="34"/>
+                                                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                                                                    <nil key="textColor"/>
+                                                                                                                    <nil key="highlightedColor"/>
+                                                                                                                </label>
+                                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-OS-apF">
+                                                                                                                    <rect key="frame" x="222" y="0.0" width="33.5" height="34"/>
+                                                                                                                    <constraints>
+                                                                                                                        <constraint firstAttribute="width" secondItem="9jA-OS-apF" secondAttribute="height" multiplier="1:1" id="NvS-D9-qIT"/>
+                                                                                                                    </constraints>
+                                                                                                                    <state key="normal" image="ic_btn_plus"/>
+                                                                                                                    <connections>
+                                                                                                                        <action selector="PlusWithSender:" destination="zrJ-aB-uPC" eventType="touchUpInside" id="AnL-sj-SY7"/>
+                                                                                                                    </connections>
+                                                                                                                </button>
+                                                                                                            </subviews>
+                                                                                                        </stackView>
+                                                                                                    </subviews>
+                                                                                                </stackView>
+                                                                                            </subviews>
+                                                                                        </stackView>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="100" id="hCx-Q2-v3d"/>
-                                                                                <constraint firstAttribute="width" constant="100" id="pbn-Wb-nZX"/>
+                                                                                <constraint firstItem="kyo-oW-WQX" firstAttribute="top" secondItem="WTt-wk-QeT" secondAttribute="top" constant="20" id="GiG-Pq-WO4"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="kyo-oW-WQX" secondAttribute="trailing" constant="15" id="dc5-lg-h34"/>
+                                                                                <constraint firstAttribute="height" secondItem="kyo-oW-WQX" secondAttribute="height" constant="50" id="nDc-kg-yhg"/>
+                                                                                <constraint firstItem="kyo-oW-WQX" firstAttribute="leading" secondItem="WTt-wk-QeT" secondAttribute="leading" constant="15" id="qSS-6d-DW4"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                     <integer key="value" value="10"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
-                                                                        </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="99w-EO-6wq">
-                                                                            <rect key="frame" x="100" y="2" width="264" height="96.5"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نص كرتونة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzz-cz-PeJ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="264" height="29"/>
-                                                                                    <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
-                                                                                    <color key="textColor" name="red"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حليب المراعي" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkE-NB-9Az">
-                                                                                    <rect key="frame" x="0.0" y="34" width="264" height="29"/>
-                                                                                    <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="15"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pGi-yz-5qg">
-                                                                                    <rect key="frame" x="0.0" y="68" width="264" height="28.5"/>
-                                                                                    <subviews>
-                                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CJj-rS-7gG">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="183.5" height="28.5"/>
-                                                                                            <subviews>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwa-KV-GKF">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="161.5" height="28.5"/>
-                                                                                                    <attributedString key="attributedText">
-                                                                                                        <fragment content="عبوة">
-                                                                                                            <attributes>
-                                                                                                                <font key="NSFont" size="14" name="CourierNewPSMT"/>
-                                                                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                                            </attributes>
-                                                                                                        </fragment>
-                                                                                                    </attributedString>
-                                                                                                    <nil key="highlightedColor"/>
-                                                                                                </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OO9-Mj-5bw">
-                                                                                                    <rect key="frame" x="166.5" y="0.0" width="17" height="28.5"/>
-                                                                                                    <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                                                                    <nil key="textColor"/>
-                                                                                                    <nil key="highlightedColor"/>
-                                                                                                </label>
-                                                                                            </subviews>
-                                                                                        </stackView>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-1d-qGp">
-                                                                                            <rect key="frame" x="193.5" y="4" width="8" height="20.5"/>
-                                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                                                            <nil key="textColor"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                        </label>
-                                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EJy-j2-XCe">
-                                                                                            <rect key="frame" x="211.5" y="7" width="52.5" height="14"/>
-                                                                                            <subviews>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-UZ-gcs">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="14"/>
-                                                                                                    <attributedString key="attributedText">
-                                                                                                        <fragment content="SAR">
-                                                                                                            <attributes>
-                                                                                                                <font key="NSFont" size="12" name="CourierNewPSMT"/>
-                                                                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                                            </attributes>
-                                                                                                        </fragment>
-                                                                                                    </attributedString>
-                                                                                                    <nil key="highlightedColor"/>
-                                                                                                </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="223" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-2M-9zk">
-                                                                                                    <rect key="frame" x="27" y="0.0" width="25.5" height="14"/>
-                                                                                                    <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                                                                    <color key="textColor" name="red"/>
-                                                                                                    <nil key="highlightedColor"/>
-                                                                                                </label>
-                                                                                            </subviews>
-                                                                                        </stackView>
-                                                                                    </subviews>
-                                                                                </stackView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WPK-JM-ZLN">
-                                                                    <rect key="frame" x="0.0" y="120" width="364" height="47"/>
-                                                                    <subviews>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfJ-Y0-yrU">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="1"/>
-                                                                            <subviews>
-                                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EhS-Qw-Ey7">
-                                                                                    <rect key="frame" x="10" y="0.0" width="354" height="1"/>
-                                                                                    <color key="backgroundColor" name="separator"/>
-                                                                                </view>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="EhS-Qw-Ey7" firstAttribute="leading" secondItem="HfJ-Y0-yrU" secondAttribute="leading" constant="10" id="8wb-wn-cW2"/>
-                                                                                <constraint firstItem="EhS-Qw-Ey7" firstAttribute="top" secondItem="HfJ-Y0-yrU" secondAttribute="top" id="EUj-b3-5uR"/>
-                                                                                <constraint firstAttribute="height" constant="1" id="TtF-TN-REr"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="EhS-Qw-Ey7" secondAttribute="bottom" id="gZd-z5-Bb6"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="EhS-Qw-Ey7" secondAttribute="trailing" id="gdx-Tj-6aQ"/>
-                                                                            </constraints>
                                                                         </view>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w2b-N2-pdE">
-                                                                            <rect key="frame" x="0.0" y="16" width="364" height="31"/>
-                                                                            <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGb-vc-XoL">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="yGb-vc-XoL" secondAttribute="height" multiplier="1:1" id="DEx-4m-wOS"/>
-                                                                                    </constraints>
-                                                                                    <state key="normal" image="ic_delete"/>
-                                                                                </button>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jQS-PP-6vU">
-                                                                                    <rect key="frame" x="41" y="0.0" width="323" height="31"/>
-                                                                                    <subviews>
-                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoZ-8L-Ikb">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="231" height="31"/>
-                                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        </view>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivA-hF-5nE">
-                                                                                            <rect key="frame" x="241" y="0.0" width="31" height="31"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="width" secondItem="ivA-hF-5nE" secondAttribute="height" multiplier="1:1" id="lai-vR-eMQ"/>
-                                                                                            </constraints>
-                                                                                            <state key="normal" image="ic_btn_mins"/>
-                                                                                        </button>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKq-aM-Y3l">
-                                                                                            <rect key="frame" x="282" y="0.0" width="0.0" height="31"/>
-                                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                                                            <nil key="textColor"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                        </label>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-0b-pVB">
-                                                                                            <rect key="frame" x="292" y="0.0" width="31" height="31"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="width" secondItem="XTj-0b-pVB" secondAttribute="height" multiplier="1:1" id="4ZT-ce-2Go"/>
-                                                                                            </constraints>
-                                                                                            <state key="normal" image="ic_btn_plus"/>
-                                                                                        </button>
-                                                                                    </subviews>
-                                                                                </stackView>
-                                                                            </subviews>
-                                                                        </stackView>
                                                                     </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="cTz-bs-sT4" firstAttribute="top" secondItem="vs5-1n-lpi" secondAttribute="top" constant="20" id="Qkq-NN-2Kf"/>
-                                                        <constraint firstItem="cTz-bs-sT4" firstAttribute="leading" secondItem="vs5-1n-lpi" secondAttribute="leading" constant="15" id="UxS-ax-lJS"/>
-                                                        <constraint firstAttribute="height" secondItem="cTz-bs-sT4" secondAttribute="height" constant="50" id="fdd-dR-y4j"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cTz-bs-sT4" secondAttribute="trailing" constant="15" id="qWb-Ey-1E2"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="vs5-1n-lpi" secondAttribute="bottom" constant="10" id="1c8-bL-V3p"/>
-                                                <constraint firstItem="vs5-1n-lpi" firstAttribute="top" secondItem="RL2-ul-ABC" secondAttribute="top" constant="10" id="DkJ-pM-kEs"/>
-                                                <constraint firstItem="vs5-1n-lpi" firstAttribute="leading" secondItem="RL2-ul-ABC" secondAttribute="leading" constant="10" id="Z6w-x7-0p1"/>
-                                                <constraint firstAttribute="trailing" secondItem="vs5-1n-lpi" secondAttribute="trailing" constant="10" id="hdb-mQ-5H6"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="dark light"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="QtA-lT-VMg" id="Rg5-7q-yDh"/>
-                                    <outlet property="delegate" destination="QtA-lT-VMg" id="Ub4-vU-7wA"/>
-                                </connections>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-I3-7B4" customClass="ViewShadow" customModule="Joumla" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="687.5" width="414" height="174.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Hf-nfd">
-                                        <rect key="frame" x="10" y="10" width="394" height="144.5"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77j-TY-12l">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="69.5"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ehw-bv-NLD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="69.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="WTt-wk-QeT" secondAttribute="trailing" constant="10" id="CtC-Os-bbL"/>
+                                                                        <constraint firstItem="WTt-wk-QeT" firstAttribute="top" secondItem="AdG-VU-fNO" secondAttribute="top" constant="10" id="afr-a3-Zea"/>
+                                                                        <constraint firstItem="WTt-wk-QeT" firstAttribute="leading" secondItem="AdG-VU-fNO" secondAttribute="leading" constant="10" id="gGa-T7-7uI"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="WTt-wk-QeT" secondAttribute="bottom" constant="10" id="vmg-j8-rSo"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <color key="backgroundColor" name="dark light"/>
+                                                                <connections>
+                                                                    <outlet property="Delet" destination="8oY-nu-GRn" id="Myq-ow-K2l"/>
+                                                                    <outlet property="Minus" destination="SGt-af-5t6" id="Kcp-JF-NoQ"/>
+                                                                    <outlet property="OrderImage" destination="AWR-cv-GEm" id="cL0-YW-b2i"/>
+                                                                    <outlet property="Plus" destination="9jA-OS-apF" id="2iy-mp-WAP"/>
+                                                                    <outlet property="Save" destination="5Hj-dA-NA6" id="wTR-vh-gNs"/>
+                                                                    <outlet property="bio" destination="ZKi-WJ-fav" id="qvh-nT-ebY"/>
+                                                                    <outlet property="cost" destination="bFD-aF-F9r" id="w2T-UG-LeT"/>
+                                                                    <outlet property="inPackage" destination="St2-e7-jgh" id="wnt-CD-jrI"/>
+                                                                    <outlet property="orderName" destination="9oO-Vk-EDc" id="hQq-xl-Tcy"/>
+                                                                    <outlet property="quantity" destination="M8x-fM-RYY" id="tpb-x0-m5t"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="zrJ-aB-uPC" id="2kE-5t-LMj"/>
+                                                            <outlet property="delegate" destination="zrJ-aB-uPC" id="KGz-7S-hwQ"/>
+                                                        </connections>
+                                                    </tableView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJL-3i-EPF" customClass="ViewShadow" customModule="Joumla" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="676.5" width="394" height="151.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="إجمالى              " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wa-zx-tPs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-rR-Sa7">
-                                                                <rect key="frame" x="0.0" y="38.5" width="117.5" height="31"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iYD-A6-Ebr">
+                                                                <rect key="frame" x="10" y="10" width="374" height="121.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uN-SA-NH7">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="31"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTO-d4-rHD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lry-tW-nDL">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="46.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="إجمالى              " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-0P-Cvc">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="96.5" height="17.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-5q-918">
+                                                                                        <rect key="frame" x="0.0" y="27.5" width="96.5" height="19"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-Z0-1Vk">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="19"/>
+                                                                                                <attributedString key="attributedText">
+                                                                                                    <fragment content="SAR">
+                                                                                                        <attributes>
+                                                                                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                        </attributes>
+                                                                                                    </fragment>
+                                                                                                </attributedString>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMk-Mb-Uwi">
+                                                                                                <rect key="frame" x="78.5" y="0.0" width="18" height="19"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lJd-bg-a55">
+                                                                                <rect key="frame" x="96.5" y="0.0" width="277.5" height="46.5"/>
+                                                                                <subviews>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-8z-PQ7">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="277.5" height="17.5"/>
+                                                                                        <subviews>
+                                                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jyk-ca-ihd">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="231" height="17.5"/>
+                                                                                                <subviews>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYW-AX-w1g">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="17.5"/>
+                                                                                                        <attributedString key="attributedText">
+                                                                                                            <fragment content="SAR">
+                                                                                                                <attributes>
+                                                                                                                    <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                                </attributes>
+                                                                                                            </fragment>
+                                                                                                        </attributedString>
+                                                                                                        <nil key="highlightedColor"/>
+                                                                                                    </label>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-Tz-WEO">
+                                                                                                        <rect key="frame" x="213" y="0.0" width="18" height="17.5"/>
+                                                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                        <nil key="textColor"/>
+                                                                                                        <nil key="highlightedColor"/>
+                                                                                                    </label>
+                                                                                                </subviews>
+                                                                                            </stackView>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="الشحن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bW-gI-YzD">
+                                                                                                <rect key="frame" x="241" y="0.0" width="36.5" height="17.5"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                                <color key="textColor" name="dark text"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JWa-c1-I8F">
+                                                                                        <rect key="frame" x="0.0" y="27.5" width="277.5" height="19"/>
+                                                                                        <subviews>
+                                                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JEj-X8-tPn">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="204.5" height="19"/>
+                                                                                                <subviews>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ2-cN-PRs">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="181.5" height="19"/>
+                                                                                                        <attributedString key="attributedText">
+                                                                                                            <fragment content="SAR">
+                                                                                                                <attributes>
+                                                                                                                    <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                                </attributes>
+                                                                                                            </fragment>
+                                                                                                        </attributedString>
+                                                                                                        <nil key="highlightedColor"/>
+                                                                                                    </label>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scT-04-AZt">
+                                                                                                        <rect key="frame" x="186.5" y="0.0" width="18" height="19"/>
+                                                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                                                        <nil key="textColor"/>
+                                                                                                        <nil key="highlightedColor"/>
+                                                                                                    </label>
+                                                                                                </subviews>
+                                                                                            </stackView>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="قيمة الضربية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj2-yc-5R5">
+                                                                                                <rect key="frame" x="214.5" y="0.0" width="63" height="19"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="14"/>
+                                                                                                <color key="textColor" name="dark text"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w43-BQ-DD5" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="61.5" width="374" height="60"/>
+                                                                        <color key="backgroundColor" name="green"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="KVK-2E-rbg"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="17"/>
+                                                                        <state key="normal" title="متابعة الشراء">
+                                                                            <color key="titleColor" name="white"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <integer key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="iYD-A6-Ebr" secondAttribute="trailing" constant="10" id="FV5-9r-Fod"/>
+                                                            <constraint firstAttribute="height" secondItem="iYD-A6-Ebr" secondAttribute="height" constant="30" id="YaL-aV-RWY"/>
+                                                            <constraint firstItem="iYD-A6-Ebr" firstAttribute="leading" secondItem="EJL-3i-EPF" secondAttribute="leading" constant="10" id="pPs-mE-Wck"/>
+                                                            <constraint firstItem="iYD-A6-Ebr" firstAttribute="top" secondItem="EJL-3i-EPF" secondAttribute="top" constant="10" id="zdH-NZ-KSW"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-Jj-Uc8">
+                                                        <rect key="frame" x="0.0" y="828" width="394" height="405"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-gb-f05">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="110"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إجمالى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u57-wY-efW">
+                                                                        <rect key="frame" x="341" y="20" width="33" height="15.5"/>
+                                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3332" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b0-gE-MMA">
+                                                                        <rect key="frame" x="338" y="45.5" width="36" height="19"/>
+                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fv-VI-ZWR">
+                                                                        <rect key="frame" x="311" y="52.5" width="22" height="14"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="SAR">
                                                                                 <attributes>
@@ -265,143 +658,211 @@
                                                                         </attributedString>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-Sn-QQB">
-                                                                        <rect key="frame" x="99.5" y="0.0" width="18" height="31"/>
-                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر شامل قيمة الشحن" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbY-0C-3Ek">
+                                                                        <rect key="frame" x="10" y="58" width="113.5" height="15.5"/>
+                                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-od-J0Q">
-                                                        <rect key="frame" x="117.5" y="0.0" width="276.5" height="69.5"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RFg-Aj-bnn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="276.5" height="28.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="u57-wY-efW" firstAttribute="top" secondItem="Dhh-gb-f05" secondAttribute="top" constant="20" id="5Y1-Vv-Ybz"/>
+                                                                    <constraint firstItem="6b0-gE-MMA" firstAttribute="leading" secondItem="4Fv-VI-ZWR" secondAttribute="trailing" constant="5" id="7D4-ri-Ycg"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="6b0-gE-MMA" secondAttribute="trailing" constant="20" id="AWA-q8-3hS"/>
+                                                                    <constraint firstItem="6b0-gE-MMA" firstAttribute="top" secondItem="u57-wY-efW" secondAttribute="bottom" constant="10" id="I8x-lw-0eE"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="u57-wY-efW" secondAttribute="trailing" constant="20" id="J5v-Ti-1A0"/>
+                                                                    <constraint firstItem="4Fv-VI-ZWR" firstAttribute="firstBaseline" secondItem="6b0-gE-MMA" secondAttribute="firstBaseline" constant="2" id="fu9-GU-hiM"/>
+                                                                    <constraint firstItem="kbY-0C-3Ek" firstAttribute="leading" secondItem="Dhh-gb-f05" secondAttribute="leading" constant="10" id="pia-dX-MaS"/>
+                                                                    <constraint firstItem="kbY-0C-3Ek" firstAttribute="firstBaseline" secondItem="6b0-gE-MMA" secondAttribute="firstBaseline" constant="10" id="sMG-0b-nGz"/>
+                                                                    <constraint firstAttribute="height" constant="110" id="vRi-ZN-y92"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RPL-yX-llD">
+                                                                <rect key="frame" x="0.0" y="120" width="394" height="285"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oGy-kW-tKN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="224.5" height="28.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuc-QB-sSZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="201.5" height="28.5"/>
-                                                                                <attributedString key="attributedText">
-                                                                                    <fragment content="SAR">
-                                                                                        <attributes>
-                                                                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
-                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                        </attributes>
-                                                                                    </fragment>
-                                                                                </attributedString>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51X-6o-Nup">
-                                                                                <rect key="frame" x="206.5" y="0.0" width="18" height="28.5"/>
-                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="الشحن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krh-NP-U3Q">
-                                                                        <rect key="frame" x="234.5" y="0.0" width="42" height="28.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يمكنك إختيار  إحدي وسائل وطرق الدفع التالية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkm-QK-8b6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
-                                                                        <color key="textColor" name="dark text"/>
+                                                                        <color key="textColor" name="light blue"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fkZ-bV-XfL">
-                                                                <rect key="frame" x="0.0" y="38.5" width="276.5" height="31"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MmI-M4-F9x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="31"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E5V-cv-0aR">
+                                                                        <rect key="frame" x="0.0" y="40" width="394" height="145"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwn-3G-KeE">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="31"/>
-                                                                                <attributedString key="attributedText">
-                                                                                    <fragment content="SAR">
-                                                                                        <attributes>
-                                                                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
-                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                        </attributes>
-                                                                                    </fragment>
-                                                                                </attributedString>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG4-D5-ddS">
-                                                                                <rect key="frame" x="169.5" y="0.0" width="18" height="31"/>
-                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-sq-BCx" userLabel="Stack1">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="45"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-Uk-H0t">
+                                                                                        <rect key="frame" x="0.0" y="11.5" width="16" height="22"/>
+                                                                                        <state key="normal" image="ic_chcek"/>
+                                                                                    </button>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-iP-R6D">
+                                                                                        <rect key="frame" x="16" y="20" width="378" height="5"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع النقدى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-6I-6C7">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="0.0"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع النقدى عند إستلام الشحنة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtK-OH-kUV">
+                                                                                                <rect key="frame" x="0.0" y="5" width="378" height="0.0"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="15"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="cj7-iP-R6D" firstAttribute="top" secondItem="ZaP-sq-BCx" secondAttribute="top" constant="20" id="scM-A7-CVw"/>
+                                                                                </constraints>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AFR-Zn-TMW" userLabel="Stack2">
+                                                                                <rect key="frame" x="0.0" y="75" width="394" height="5"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n82-lw-ZxM">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="5"/>
+                                                                                        <state key="normal" image="ic_chcek"/>
+                                                                                    </button>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="auo-Jq-gmJ">
+                                                                                        <rect key="frame" x="16" y="0.0" width="378" height="5"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطاقات الائتمان" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GW-95-Zt7">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="0.0"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment_visa" translatesAutoresizingMaskIntoConstraints="NO" id="srV-eK-Xdr">
+                                                                                                <rect key="frame" x="0.0" y="5" width="378" height="0.0"/>
+                                                                                            </imageView>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="au4-IQ-Eot" userLabel="Stack3">
+                                                                                <rect key="frame" x="0.0" y="110" width="394" height="5"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek4-4P-cWx">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="5"/>
+                                                                                        <state key="normal" image="ic_chcek"/>
+                                                                                    </button>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mdA-83-4He">
+                                                                                        <rect key="frame" x="16" y="0.0" width="378" height="5"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="خدمات دفع الأموال" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ4-B6-bBe">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="0.0"/>
+                                                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="15"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment_mada" translatesAutoresizingMaskIntoConstraints="NO" id="hdP-Ut-ZbJ">
+                                                                                                <rect key="frame" x="0.0" y="5" width="378" height="0.0"/>
+                                                                                            </imageView>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awo-Ty-8ZH">
+                                                                                <rect key="frame" x="0.0" y="145" width="394" height="0.0"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="قيمة الضربية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt4-xy-2wq">
-                                                                        <rect key="frame" x="197.5" y="0.0" width="79" height="31"/>
-                                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="14"/>
-                                                                        <color key="textColor" name="dark text"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPR-m6-iAP" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="225" width="394" height="60"/>
+                                                                        <color key="backgroundColor" name="green"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="hjI-MP-rX3"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="17"/>
+                                                                        <state key="normal" title="إتمام الشراء">
+                                                                            <color key="titleColor" name="white"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <integer key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf7-a8-H98" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="84.5" width="394" height="60"/>
-                                                <color key="backgroundColor" name="green"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="427-eu-az7"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="17"/>
-                                                <state key="normal" title="متابعة الشراء">
-                                                    <color key="titleColor" name="white"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" name="dark light"/>
+                                        <constraints>
+                                            <constraint firstItem="TbK-cU-S5L" firstAttribute="leading" secondItem="Wtd-z7-if4" secondAttribute="leading" constant="10" id="H2l-7E-WnV"/>
+                                            <constraint firstAttribute="height" secondItem="TbK-cU-S5L" secondAttribute="height" constant="50" id="ZTg-ht-sud"/>
+                                            <constraint firstItem="TbK-cU-S5L" firstAttribute="top" secondItem="Wtd-z7-if4" secondAttribute="top" constant="10" id="cUN-iO-ncI"/>
+                                            <constraint firstAttribute="trailing" secondItem="TbK-cU-S5L" secondAttribute="trailing" constant="10" id="gfx-WQ-OoS"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="SbG-Hf-nfd" firstAttribute="top" secondItem="5AV-I3-7B4" secondAttribute="top" constant="10" id="BXK-ku-RIp"/>
-                                    <constraint firstAttribute="height" secondItem="SbG-Hf-nfd" secondAttribute="height" constant="30" id="Fq3-RS-CgS"/>
-                                    <constraint firstAttribute="trailing" secondItem="SbG-Hf-nfd" secondAttribute="trailing" constant="10" id="VGG-ZY-eUh"/>
-                                    <constraint firstItem="SbG-Hf-nfd" firstAttribute="leading" secondItem="5AV-I3-7B4" secondAttribute="leading" constant="10" id="vK0-Qc-AhH"/>
+                                    <constraint firstItem="Wtd-z7-if4" firstAttribute="leading" secondItem="uIL-iv-iKe" secondAttribute="leading" id="6ly-lg-uJG"/>
+                                    <constraint firstItem="Wtd-z7-if4" firstAttribute="width" secondItem="uIL-iv-iKe" secondAttribute="width" id="8DM-jK-YyK"/>
+                                    <constraint firstItem="Wtd-z7-if4" firstAttribute="height" secondItem="uIL-iv-iKe" secondAttribute="height" id="AyY-mD-glh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wtd-z7-if4" secondAttribute="bottom" id="fVL-74-uf1"/>
+                                    <constraint firstItem="Wtd-z7-if4" firstAttribute="top" secondItem="uIL-iv-iKe" secondAttribute="top" id="oW5-ZV-Acw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wtd-z7-if4" secondAttribute="trailing" id="piJ-Pi-O1m"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
-                            <constraint firstItem="zXe-K1-bVu" firstAttribute="leading" secondItem="v6N-z6-a9p" secondAttribute="leading" id="AMf-IU-zbX"/>
-                            <constraint firstItem="zXe-K1-bVu" firstAttribute="top" secondItem="v6N-z6-a9p" secondAttribute="top" constant="50" id="QEP-4o-wHg"/>
-                            <constraint firstItem="5AV-I3-7B4" firstAttribute="leading" secondItem="J3w-Dp-kfm" secondAttribute="leading" id="XgY-3f-EgT"/>
-                            <constraint firstItem="J3w-Dp-kfm" firstAttribute="trailing" secondItem="zXe-K1-bVu" secondAttribute="trailing" id="dPo-es-ELy"/>
-                            <constraint firstItem="J3w-Dp-kfm" firstAttribute="trailing" secondItem="5AV-I3-7B4" secondAttribute="trailing" id="s1A-l3-doL"/>
-                            <constraint firstItem="J3w-Dp-kfm" firstAttribute="bottom" secondItem="5AV-I3-7B4" secondAttribute="bottom" id="uA5-KC-9hQ"/>
-                            <constraint firstItem="zXe-K1-bVu" firstAttribute="bottom" secondItem="5AV-I3-7B4" secondAttribute="top" id="uxE-U4-AQg"/>
+                            <constraint firstItem="abO-t2-SA1" firstAttribute="trailing" secondItem="uIL-iv-iKe" secondAttribute="trailing" id="A8m-BZ-X32"/>
+                            <constraint firstItem="uIL-iv-iKe" firstAttribute="leading" secondItem="abO-t2-SA1" secondAttribute="leading" id="EWM-vp-BZp"/>
+                            <constraint firstItem="abO-t2-SA1" firstAttribute="bottom" secondItem="uIL-iv-iKe" secondAttribute="bottom" id="EZo-cu-WCt"/>
+                            <constraint firstItem="uIL-iv-iKe" firstAttribute="top" secondItem="abO-t2-SA1" secondAttribute="top" id="uat-7w-m9q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="J3w-Dp-kfm"/>
+                        <viewLayoutGuide key="safeArea" id="abO-t2-SA1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bda-fh-jY5"/>
+                    <navigationItem key="navigationItem" title="سلة المشتريات" id="cWM-xI-99w"/>
+                    <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="shipping" destination="ysQ-Tz-WEO" id="9q2-zk-gUG"/>
+                        <outlet property="tableView" destination="pkB-gz-wJf" id="7je-XP-NWj"/>
+                        <outlet property="tax" destination="scT-04-AZt" id="Gyy-dK-xUG"/>
+                        <outlet property="totalCost" destination="iMk-Mb-Uwi" id="QuF-e2-eLf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HGC-gf-9o4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgf-ls-80e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-480" y="192"/>
+            <point key="canvasLocation" x="-413" y="-1503"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ikx-ij-3bV">
+            <objects>
+                <navigationController storyboardIdentifier="Trashing" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gv0-XQ-8xa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="LFI-gc-6xF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="green"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zrJ-aB-uPC" kind="relationship" relationship="rootViewController" id="70y-vk-ANC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJ9-dA-NSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1319" y="-1503"/>
         </scene>
     </scenes>
     <resources>
         <image name="5-foodstuffs" width="1080" height="675"/>
         <image name="ic_btn_mins" width="32" height="32"/>
         <image name="ic_btn_plus" width="32" height="32"/>
+        <image name="ic_chcek" width="21" height="21"/>
         <image name="ic_delete" width="24" height="24"/>
+        <image name="payment_mada" width="66" height="26"/>
+        <image name="payment_visa" width="98" height="26"/>
         <namedColor name="dark light">
             <color red="0.89399999380111694" green="0.89399999380111694" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -410,6 +871,9 @@
         </namedColor>
         <namedColor name="green">
             <color red="0.34901960784313724" green="0.75686274509803919" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light blue">
+            <color red="0.0" green="0.51800000667572021" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="red">
             <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

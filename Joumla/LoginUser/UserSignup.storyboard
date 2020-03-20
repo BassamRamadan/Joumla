@@ -114,19 +114,19 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ucm-Vv-OOV">
-                                                <rect key="frame" x="20" y="130" width="374" height="708"/>
+                                                <rect key="frame" x="20" y="130" width="374" height="733"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yd1-aw-xW8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-bU-5AB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
                                                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="17"/>
                                                                 <color key="textColor" name="dark blue"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسعد بإنضمامك الى تطبيق جملة جدة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGg-Mw-7M5">
-                                                                <rect key="frame" x="0.0" y="20" width="374" height="20"/>
+                                                                <rect key="frame" x="0.0" y="32.5" width="374" height="32.5"/>
                                                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="52L-wr-Fc4">
-                                                        <rect key="frame" x="0.0" y="80" width="374" height="360"/>
+                                                        <rect key="frame" x="0.0" y="105" width="374" height="360"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الإسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agJ-0G-CLf" customClass="TextFieldShadow" customModule="Joumla" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -208,7 +208,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHg-3z-4z0">
-                                                        <rect key="frame" x="0.0" y="480" width="374" height="128"/>
+                                                        <rect key="frame" x="0.0" y="505" width="374" height="128"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-We-pwE">
                                                                 <rect key="frame" x="343" y="10" width="21" height="108"/>
@@ -218,13 +218,13 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موافق على" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMc-Af-mAf">
-                                                                <rect key="frame" x="275" y="10" width="58" height="108"/>
+                                                                <rect key="frame" x="252" y="10" width="81" height="108"/>
                                                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-4D-Gvz">
-                                                                <rect key="frame" x="150" y="10" width="120" height="108"/>
+                                                                <rect key="frame" x="127" y="10" width="120" height="108"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="سياسة الأستخدام">
@@ -257,7 +257,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9V3-2Y-1cd" customClass="ButtonShadow" customModule="Joumla" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="648" width="374" height="60"/>
+                                                        <rect key="frame" x="0.0" y="673" width="374" height="60"/>
                                                         <color key="backgroundColor" name="green"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="1L2-7k-pA8"/>

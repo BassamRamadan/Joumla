@@ -9,8 +9,6 @@
 
 import UIKit
 import NVActivityIndicatorView
-
-
 class LoginViewController: UIViewController ,  NVActivityIndicatorViewable {
     
     
@@ -61,7 +59,7 @@ class LoginViewController: UIViewController ,  NVActivityIndicatorViewable {
                         CashedData.saveUserPhone(name:  user?.phone ?? "")
                         CashedData.saveUserName(name: user?.name ?? "")
                         CashedData.saveUserEmail(name: user?.email ?? "")
-                        
+                        CashedData.saveUserImage(name: user?.imagePath ?? "")
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabUserController
                         linkingVC.index = 1

@@ -11,6 +11,7 @@
 		5813FE0724211DAF009C9EBA /* OrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813FE0624211DAF009C9EBA /* OrdersCell.swift */; };
 		58199F7723FEE4BF00C3B67A /* Trashing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58199F7623FEE4BF00C3B67A /* Trashing.storyboard */; };
 		581F2E04240C807600F0A971 /* TabBarUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F2E03240C807500F0A971 /* TabBarUser.swift */; };
+		582234FD24243DB2009E0BDE /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582234FC24243DB2009E0BDE /* Cart.swift */; };
 		5822966523F57A750096A9E4 /* UserOrdersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5822966423F57A750096A9E4 /* UserOrdersController.swift */; };
 		5822966823F580090096A9E4 /* UserOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5822966723F580090096A9E4 /* UserOrderCell.swift */; };
 		5823947F23F29E74002FC05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823947E23F29E74002FC05E /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		5813FE0624211DAF009C9EBA /* OrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCell.swift; sourceTree = "<group>"; };
 		58199F7623FEE4BF00C3B67A /* Trashing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trashing.storyboard; sourceTree = "<group>"; };
 		581F2E03240C807500F0A971 /* TabBarUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarUser.swift; path = ../TabBarUser.swift; sourceTree = "<group>"; };
+		582234FC24243DB2009E0BDE /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		5822966423F57A750096A9E4 /* UserOrdersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersController.swift; sourceTree = "<group>"; };
 		5822966723F580090096A9E4 /* UserOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderCell.swift; sourceTree = "<group>"; };
 		5823947B23F29E74002FC05E /* Joumla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joumla.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				5813FE042421132D009C9EBA /* OrderDetails.swift */,
 				5830530724224B0B008D6326 /* ProductsData.swift */,
 				583053092422695A008D6326 /* PostProducts.swift */,
+				582234FC24243DB2009E0BDE /* Cart.swift */,
 				5822966723F580090096A9E4 /* UserOrderCell.swift */,
 				5813FE0624211DAF009C9EBA /* OrdersCell.swift */,
 				58984672242194C700A2FB5C /* CategoriesCell.swift */,
@@ -473,6 +476,7 @@
 				5898467124218A7B00A2FB5C /* PinterestLayout.swift in Sources */,
 				58984675242195AE00A2FB5C /* CategoriesData.swift in Sources */,
 				5830530824224B0B008D6326 /* ProductsData.swift in Sources */,
+				582234FD24243DB2009E0BDE /* Cart.swift in Sources */,
 				583C66F92400A10E0033166D /* Products.swift in Sources */,
 				58984673242194C700A2FB5C /* CategoriesCell.swift in Sources */,
 				5823947F23F29E74002FC05E /* AppDelegate.swift in Sources */,

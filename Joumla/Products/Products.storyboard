@@ -529,18 +529,18 @@
                                                                                         <rect key="frame" x="110" y="0.0" width="224" height="45"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-lM-auV">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="45"/>
                                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             </view>
                                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij3-Pa-VBS">
-                                                                                                <rect key="frame" x="129" y="0.0" width="32" height="45"/>
+                                                                                                <rect key="frame" x="132" y="0.0" width="32" height="45"/>
                                                                                                 <state key="normal" image="ic_btn_mins"/>
                                                                                                 <connections>
                                                                                                     <action selector="MinusWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="IqP-oa-Ylc"/>
                                                                                                 </connections>
                                                                                             </button>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux8-8Z-Abp">
-                                                                                                <rect key="frame" x="171" y="0.0" width="11" height="45"/>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux8-8Z-Abp">
+                                                                                                <rect key="frame" x="174" y="0.0" width="8" height="45"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -712,6 +712,7 @@
                                                                             <constraint firstItem="18V-LY-mKn" firstAttribute="leading" secondItem="TQQ-uE-YMJ" secondAttribute="leading" id="vE3-m9-jPO"/>
                                                                         </constraints>
                                                                         <connections>
+                                                                            <outlet property="add" destination="jf0-n6-eBj" id="RbC-Q9-X2j"/>
                                                                             <outlet property="count" destination="BNA-oV-Y8n" id="rKv-RG-rXW"/>
                                                                             <outlet property="price" destination="C0t-1A-ebc" id="lkW-lU-OIP"/>
                                                                             <outlet property="title" destination="G2A-N5-dxk" id="4OY-PU-eXk"/>
@@ -894,14 +895,17 @@
                                         <rect key="frame" x="40" y="55" width="24" height="24"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJW-BL-eeK">
-                                        <rect key="frame" x="30" y="30" width="50" height="50"/>
+                                        <rect key="frame" x="30" y="30" width="60" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="24Q-Ye-wss"/>
-                                            <constraint firstAttribute="height" constant="50" id="lfv-kh-gg4"/>
+                                            <constraint firstAttribute="width" constant="60" id="24Q-Ye-wss"/>
+                                            <constraint firstAttribute="height" constant="60" id="lfv-kh-gg4"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="MoveToPurchasesWithSender:" destination="Sy0-Ng-BQG" eventType="touchUpInside" id="KEZ-x2-loD"/>
+                                        </connections>
                                     </button>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjd-AW-k7E">
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjd-AW-k7E">
                                         <rect key="frame" x="55" y="45" width="25" height="25"/>
                                         <color key="backgroundColor" name="red"/>
                                         <constraints>
@@ -958,12 +962,14 @@
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="BagroundImage" destination="x0G-t6-CUv" id="ThD-pt-d3Q"/>
+                        <outlet property="CartItemsNumber" destination="gjd-AW-k7E" id="vOP-ts-8F9"/>
                         <outlet property="CategoryImage" destination="x0G-t6-CUv" id="Utf-g2-c0G"/>
                         <outlet property="CategoryName" destination="Ro0-nJ-kT9" id="Zfg-ec-AX0"/>
                         <outlet property="CollectionHieght" destination="GUm-ez-lOa" id="rZN-gj-his"/>
                         <outlet property="CollectionView" destination="5Bb-WH-m4z" id="lHr-9m-pB2"/>
                         <outlet property="FilterCollection" destination="2Zw-hu-vg2" id="Zax-Ko-bVu"/>
                         <outlet property="FilterView" destination="FO1-SG-2ar" id="XbB-YE-fo6"/>
+                        <outlet property="FullPackage" destination="m08-Fb-Aiv" id="S6F-jl-vHu"/>
                         <outlet property="OrderNumber" destination="Ux8-8Z-Abp" id="etm-Sh-k7x"/>
                         <outlet property="PricesCollection" destination="pmK-12-cPe" id="jzt-FC-iTm"/>
                         <outlet property="ProductDetailsStackView" destination="RDj-kM-esT" id="vUD-Vz-XAc"/>
@@ -973,6 +979,7 @@
                         <outlet property="ProductTitle" destination="dWB-3i-VCV" id="slG-YA-HQg"/>
                         <outlet property="ScrollView" destination="Q1P-xo-jFm" id="Dwc-R1-P3c"/>
                         <outlet property="topView" destination="g7B-86-8ZO" id="aUt-mf-dqR"/>
+                        <segue destination="I3O-gO-m3L" kind="show" identifier="MoveToTrash" id="U6o-Tt-S8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ni5-tK-aBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1103,6 +1110,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbA-RG-mQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5519" y="8"/>
+        </scene>
+        <!--Trashing-->
+        <scene sceneID="nYt-W5-ofl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Trashing" id="I3O-gO-m3L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="coa-vt-48a"/>
+                    <navigationItem key="navigationItem" id="t4M-4D-Wma"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Km-RQ-an7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2254" y="-623"/>
         </scene>
     </scenes>
     <resources>

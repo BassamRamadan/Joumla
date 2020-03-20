@@ -23,4 +23,5 @@ class PricesCell: UICollectionViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var count: UILabel!
     @IBOutlet var price: UILabel!
+    @IBOutlet var add: UIButton!
 }

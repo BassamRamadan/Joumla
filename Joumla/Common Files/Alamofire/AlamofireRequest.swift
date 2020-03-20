@@ -66,7 +66,7 @@ class AlamofireRequests {
         
     }
     
-    class func adminSignUp (url : String , info: [String :Any ],images:[UIImage],CompanyImage: UIImage?,coverImage: UIImage?,idImage: UIImage?,licenseImage: UIImage?, headers: [String :String ], complition :   @escaping (_ error:Error? ,_ success: Bool , _ data:Data) -> Void){
+    class func UserSignUp (url : String , info: [String :Any ],images:[UIImage],CompanyImage: UIImage?,coverImage: UIImage?,idImage: UIImage?,licenseImage: UIImage?, headers: [String :String ], complition :   @escaping (_ error:Error? ,_ success: Bool , _ data:Data) -> Void){
         
         
         let url = url

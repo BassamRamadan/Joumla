@@ -153,4 +153,73 @@ class common : UIViewController , NVActivityIndicatorViewable{
     @objc func POP() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    func getCartItems(completion : @escaping () -> Void){
+        loading()
+        let url = "https://services-apps.net/jaddastore/public/api/cart-items"
+        let headers = [
+            "Accept" : "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(CashedData.getUserApiKey() ?? "")"
+        ]
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success , jsonData) in
+            do {
+               
+                let decoder = JSONDecoder()
+                if error == nil{
+                    let dataRecived = try decoder.decode(CartItems.self, from: jsonData)
+                    if success{
+                        AppDelegate.HasAddNewOrder = false
+                        AppDelegate.CommonCartItems = dataRecived.data
+                        completion()
+                    }
+                    else  {
+                        let alert = UIAlertController(title: "Alert", message: dataRecived.message , preferredStyle: UIAlertController.Style.alert)
+                        self.stopAnimating()
+                        self.present(alert, animated: true, completion: nil)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                            switch action.style{
+                            case .default:
+                                print("default")
+                            case .cancel:
+                                print("cancel")
+                                
+                            case .destructive:
+                                print("destructive")
+                                
+                            @unknown default:
+                                print("default")
+                            }}))
+                        completion()
+                    }
+                }else{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    completion()
+                }
+            } catch {
+                print(error.localizedDescription)
+                let alert = UIAlertController(title: "Alert", message: "حدث خطأ بالرجاء التاكد من اتصالك بالانترنت " , preferredStyle: UIAlertController.Style.alert)
+                self.stopAnimating()
+                self.present(alert, animated: true, completion: nil)
+                self.showCustomDialog()
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                    @unknown default:
+                        print("default")
+                    }}))
+                completion()
+            }
+        }
+        
+    }
 }

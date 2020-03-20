@@ -26,9 +26,9 @@ struct OrderInformation : Codable {
     enum CodingKeys:String,CodingKey{
         case userId = "user_id"
         case cartId = "cart_id"
+        case shippingData = "shipping_data"
         case shippingId = "shipping_id"
         case totalCost = "total_cost"
-        case shippingData = "shipping_data"
         case id,tax,shipping,status,createdAt,items
     }
     init(id: Int,userId: String,cartId: String,shippingId: String,tax: String,shipping: String,totalCost: String,status: String,createdAt: String,items: [PurchasesDetails],shippingData: shippingInfo) {

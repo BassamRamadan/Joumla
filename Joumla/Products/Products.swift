@@ -13,6 +13,7 @@ class Products: common {
     var ProductArr = [productsInfo]()
     var FilterIds = [Int]()
     var FilterArr = [FiltersData]()
+    @IBOutlet var CartItemsNumber : UILabel!
     @IBOutlet var CollectionView : UICollectionView!
     @IBOutlet var PricesCollection : UICollectionView!
     @IBOutlet var FilterCollection : UICollectionView!
@@ -31,16 +32,19 @@ class Products: common {
     @IBOutlet var ProductImage : UIImageView!
     @IBOutlet var ProductInpackage : UILabel!
     @IBOutlet var ProductPackagePrice : UILabel!
-   
+    @IBOutlet var FullPackage : UIButton!
     
     var OrderNumberHasAdded = 1
     var PageNumber = 1
     var CategoryId : Int?
     var ProductId : Int?
+    var PriceId : Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UpdateConstraints()
-       getOrdersData(methodType: "GET", url: "https://services-apps.net/jaddastore/public/api/sub-categories/\(CategoryId ?? 0)")
+        getOrdersData(methodType: "GET", url: "https://services-apps.net/jaddastore/public/api/sub-categories/\(CategoryId ?? 0)")
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -48,7 +52,13 @@ class Products: common {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.getCartItems(){
+            () in
+            self.CartItemsNumber.text = "\(AppDelegate.CommonCartItems?.items.count ?? 0)"
+            self.stopAnimating()
+        }
         PageNumber = 1
+        OrderNumberHasAdded = 1
         hidesPages()
         UpdateConstraints()
     }
@@ -57,7 +67,7 @@ class Products: common {
         self.CollectionView.layoutIfNeeded()
         self.CollectionHieght.constant = self.CollectionView.contentSize.height
     }
-    
+  
     @IBAction func FilterOpen(sender : UIButton){
         FilterView.isHidden = false
     }
@@ -119,8 +129,21 @@ class Products: common {
                 sender.setImage(#imageLiteral(resourceName: "ic_cart_white"), for: .normal)
                 sender.backgroundColor = UIColor(named: "green")
                 sender.setTitleColor(.white, for: .normal)
+                self.PriceId = sender.tag
+                AddOrderToServer(url:  "https://services-apps.net/jaddastore/public/api/add-to-cart")
             }
         }
+    }
+  
+    @IBAction func MoveToPurchases(sender : UIButton){
+        let storyboard = UIStoryboard(name: "Trashing", bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Trashing") as! UINavigationController
+        self.present(linkingVC,animated: true,completion: nil)
+    }
+    func setupDefautForAddOrder(sender : UIButton){
+        sender.setImage(#imageLiteral(resourceName: "ic_cart") , for: .normal)
+        sender.backgroundColor = UIColor(named: "AddBackground")
+        sender.setTitleColor(.darkText, for: .normal)
     }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         BagroundImage.transform = CGAffineTransform(translationX: 0, y: ((ScrollView.contentOffset.y/2)+22) * -1)
@@ -128,6 +151,8 @@ class Products: common {
     @IBAction func back(sender : UIButton) {
         if PageNumber == 2{
             PageNumber = 1
+            self.setupDefautForAddOrder(sender: FullPackage)
+            OrderNumberHasAdded = 1
             hidesPages()
         }else{
             self.navigationController?.dismiss(animated: true)
@@ -161,8 +186,6 @@ class Products: common {
                                 self.getProducts(url: "https://services-apps.net/jaddastore/public/api/products")
                             }
                         }
-                        
-                        self.stopAnimating()
                     }
                     else  {
                         let alert = UIAlertController(title: "Alert", message: dataRecived.message , preferredStyle: UIAlertController.Style.alert)
@@ -233,6 +256,74 @@ class Products: common {
                         self.CollectionView.reloadData()
                         self.UpdateConstraints()
                         self.FilterView.isHidden = true
+                        self.stopAnimating()
+                    }
+                    else  {
+                        self.stopAnimating()
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                     self.stopAnimating()
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                }
+            } catch {
+                print(error.localizedDescription)
+                let alert = UIAlertController(title: "Alert", message: "حدث خطأ بالرجاء التاكد من اتصالك بالانترنت " , preferredStyle: UIAlertController.Style.alert)
+                self.stopAnimating()
+                self.present(alert, animated: true, completion: nil)
+                self.showCustomDialog()
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                    @unknown default:
+                        print("default")
+                    }}))
+            }
+        }
+        
+    }
+    
+    func AddOrderToServer(url: String){
+        loading()
+        let headers = [
+            "Accept" : "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(CashedData.getUserApiKey() ?? "")"
+        ]
+        var parameters : [String : Any]
+        if self.PriceId != 0{
+            parameters = [
+                "product_id": self.ProductArr[self.ProductId ?? 0].id,
+                "quantity": self.OrderNumberHasAdded ,
+                "price_id": self.PriceId ?? 0
+             ]
+        }else{
+            parameters = [
+                "product_id": self.ProductArr[self.ProductId ?? 0].id,
+                "quantity": self.OrderNumberHasAdded
+            ]
+        }
+        AlamofireRequests.PostMethod(methodType: "POST", url: url, info: parameters , headers: headers) { (error, success , jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil{
+                    let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                    if success{
+                        AppDelegate.HasAddNewOrder = true
+                        self.getCartItems(){
+                            () in
+                           self.CartItemsNumber.text = "\(AppDelegate.CommonCartItems?.items.count ?? 0)"
+                           self.stopAnimating()
+                        }
+                        self.present(common.makeAlert(message: "تم الإضافة بنجاح الى سلة المشتريات"), animated: true, completion: nil)
                         self.stopAnimating()
                     }
                     else  {
@@ -313,6 +404,8 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
             cell.title.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].title ?? ""
             cell.price.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].price ?? ""
             cell.count.text = self.ProductArr[ProductId ?? 0].prices[indexPath.row].count ?? ""
+            cell.add.tag = self.ProductArr[ProductId ?? 0].prices[indexPath.row].id
+            self.setupDefautForAddOrder(sender: cell.add)
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Products", for: indexPath) as!
@@ -330,10 +423,12 @@ extension Products : UICollectionViewDataSource , UICollectionViewDelegate , UIC
         collectionView.deselectItem(at: indexPath, animated: true)
         if collectionView == FilterCollection{
             
-        }else{
+        }else if collectionView == self.CollectionView{
             ProductId = indexPath.row
             PageNumber = 2
             hidesPages()
+        }else{
+           
         }
     }
 }
